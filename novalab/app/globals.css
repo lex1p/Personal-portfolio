@@ -1,0 +1,317 @@
+:root{
+  --green : #00cf51;
+  --accent: #2ecdbc;
+  --bg: #1b1a1f;
+  --sys_grey: #c6c6c6;
+  --sys_white: #fffffa;
+
+
+  /* Shadows */
+  --small_soft_shadow: 1px 1px 3px 2px rgba(128, 128, 128, 0.199);
+  --bold_shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.308);
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Defaults - PC/Big screen first styling */
+.homeInterface{
+  width: 100vw;
+  flex: 1;
+  background: url('/bmw.jpg');
+  background-position: center;
+  background-size: cover;
+  color: var(--sys_white);
+  padding: 5px;
+  
+
+  .homeIconTray{
+    width: 100%;
+    height: 100%;
+    /* background-color: #00cf4f4b; */
+
+    .dt_icon{
+      margin: .5rem .5rem 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 5rem;
+      padding: 10px;
+
+      &:hover{
+        background-color: rgba(128, 128, 128, 0.171);
+      }
+
+     
+
+      p{
+        font-size: 12px;
+        font-family: sans-serif;
+        margin-top: 5px;
+        text-shadow: 3px 3px 3px rgb(24, 22, 22);
+      }
+    }
+
+  }
+}
+
+ .icon{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+  }
+
+  
+
+.TaskBar{
+  width: 100vw;
+  background-color: var(--bg);
+  color: var(--sys_white);
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  z-index: 999999;
+
+  
+
+  .LucidTray{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.103);
+    border-right: 1px solid rgba(128, 128, 128, 0.226);
+    margin-right: 5px;
+    transition: 0.5s linear;
+    border-radius: 10px;
+
+    &:hover{
+        background-color: rgba(128, 128, 128, 0.363);
+      }
+
+    .lucidicon{
+      width: 40px;
+      height: 40px;
+      
+
+      
+    }
+  }
+
+  .iconsTray{
+    flex: 1;
+    display: flex;
+
+    .tb_icon{
+      margin-right: 1rem;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      transition: 0.2s linear;
+      border-radius: 5px;
+
+      &:hover{
+        background-color: rgba(128, 128, 128, 0.274);
+      }
+    }
+
+    .activeIcon{
+      background-color: rgba(128, 128, 128, 0.13);
+      border-bottom: 2px solid var(--accent);
+    }
+  }
+}
+
+.window{
+  min-width: 80%;
+  min-height: 80%;
+  position: fixed;
+  left: 10vw;
+  top: 5vh;
+  box-shadow: var(--bold_shadow);
+  display: flex;
+  flex-direction: column;
+
+
+  .windowHead{
+    height: 5%;
+    width: 100%;
+    background-color: var(--sys_white);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.144);
+
+    .title{
+      color: black;
+      flex: 1;
+      margin-left: 10px;
+    }
+
+    .controls{
+      width: fit-content;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+
+
+      .control{
+        height: 15px;
+        width: 15px;
+        flex: 1;
+        margin: 0 5px;
+        border-radius: 360px;
+        background-color: var(--sys_grey);
+        transition: 0.2s linear;
+      }
+
+      .min{
+        background-color: rgba(255, 255, 0, 0.295);
+        &:hover{
+        background-color: yellow;
+        }
+      }
+      .max{
+        background-color: rgba(0, 128, 0, 0.233);
+         &:hover{
+          background-color: green;
+        }
+        
+      }
+      .close{
+        background-color: rgba(255, 0, 0, 0.37);
+        &:hover{
+          background-color: red;
+        }
+      }
+    }
+
+    
+  }
+
+
+
+  .windowBody{
+    height: 100%;
+    background-color: #c6c6c66e;
+    backdrop-filter: blur(18px);
+    box-shadow: inset var(--small_soft_shadow);
+  }
+}
+
+.fileView{
+  background-color: var(--sys_white);
+  height: 100%;
+  display: flex;
+
+  .sideBar{
+    background-color: var(--sys_grey);
+    width: 15%;
+
+    p{
+      padding: 5px;
+      margin: 5px;
+      cursor: pointer;
+
+      &:hover{
+        background-color: #2ecdbc;
+      }
+    }
+
+    .select{
+      background-color: #2ecdbc;
+    }
+  }
+
+  .select{
+      background-color: #2ecdbc;
+    }
+
+
+  .viewPane{
+
+    flex: 1;
+    display: flex;
+    color: black;
+
+    .files{
+      width: 30%;
+      border-right: 1px solid rgba(128, 128, 128, 0.123);
+      margin: 0 5px;
+
+
+      .file{
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin: 10px 0;
+        cursor: pointer;
+
+        img{
+          border-radius: 10px;
+        }
+
+        p{
+          margin-left: 10px;
+          font-size: 14px;
+        }
+        img{
+          width: 20px;
+          
+        }
+      }
+    }
+
+    .preview{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+
+      img{
+        width: 100px;
+        height: 100px;
+      }
+
+      h2{
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .small{
+        font-size: 12px;
+        color: gray;
+      }
+
+      .ctaDiv{
+        margin: 2rem 0;
+        .btn{
+          margin: 0 10px;
+          padding: 10px;
+          border-radius: 4px;
+          border: none;
+          color: white;
+        }
+
+        .prim{
+          background-color: var(--accent);
+          
+        }
+        .sec{
+          background-color: var(--sys_grey);
+
+        }
+      }
+    }
+  }
+}

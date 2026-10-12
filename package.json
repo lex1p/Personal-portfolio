@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-draggable": "^4.4.4",
+    "react-resizable": "^4.0.2"
+  }
+}
