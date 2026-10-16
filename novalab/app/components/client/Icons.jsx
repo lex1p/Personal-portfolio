@@ -2,14 +2,20 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Draggable from 'react-draggable'
+import Alert from './Alert'
+
 
 
 export const  TaskbarIcon = ({name,path, icon, isActive}) => {
+  const [showAlert, setshowAlert] = useState(false);
 
   
   return (
     // Taskbar Icon
-    <img title={name} className={`tb_icon ${ isActive? "activeIcon": ""} icon`} src={icon} alt={icon} />
+    <>
+      {showAlert && <Alert cancel={(()=> setshowAlert(false))} ok={() => window.open(`${path}`, '_blank', 'noopener, noreferrer') } title = 'This site opens on a new page' />}
+    <img onClick={()=> setshowAlert(true)} title={name} className={`tb_icon ${ isActive? "activeIcon": ""} icon`} src={icon} alt={icon} />
+    </>
   )
 }
 
@@ -19,7 +25,8 @@ export const  LucidAI_icon = () => {
   
   return (
     // Lucid AI Icon
-    <img title='Chat LucyAI' className='tb_icon lucidicon icon' src= '/lucidAI.png' alt={'Lucid AI'} />
+      <img title='Chat LucyAI' className='tb_icon lucidicon icon' src= '/lucidAI.png' alt={'Lucid AI'} />
+  
   )
 }
 

@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import React, { useEffect } from 'react'
 import { LucidAI_icon, TaskbarIcon } from '../client/Icons'
-import { app_icons } from '@/app/src/system_icons'
-
 export const TaskBar = () => {
 const [taskbaricons, settaskbaricons] = useState([]);
 
@@ -28,7 +26,7 @@ const [taskbaricons, settaskbaricons] = useState([]);
         {/* Our taskbar Icons tray */}
         <div className="iconsTray">
             {taskbaricons.map((icon, idx) => (
-                <TaskbarIcon key={idx} isActive={icon?.isActive} name={icon.name} icon={icon.icon}/>
+                <TaskbarIcon key={idx} isActive={icon?.isActive} name={icon.name} icon={icon.icon} path={icon.path}/>
             ))}
         </div>
 

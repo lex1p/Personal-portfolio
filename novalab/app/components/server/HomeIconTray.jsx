@@ -31,6 +31,7 @@ const HomeIconTray = () => {
     <div onContextMenu ={rightClick} className='homeIconTray'>
       {icons.map((icon, idx)=> (
         <DesktopIcon key = {idx} clicK={()=> {
+          localStorage.setItem('tab', icon.route)
           setopenedWindows(prev => [...prev, {
             name: icon.name,
             isActive: true,

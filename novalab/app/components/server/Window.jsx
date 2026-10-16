@@ -5,6 +5,7 @@ import React from 'react';
 import { Resizable } from 'react-resizable';
 import 'react-resizable/css/styles.css';
 import Draggable from 'react-draggable'
+import Alert from '../client/Alert';
 
 const Window = ({title, children, close, isActive, id}) => {
     const [size, setsize] = useState({ width: 80, height: 80 });
